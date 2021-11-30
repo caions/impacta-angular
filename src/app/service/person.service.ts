@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Pessoa } from './model/pessoa'
+import { Pessoa } from '../model/pessoa'
 
 @Injectable({
     providedIn: 'root'
 })
-export class PessoaService {
+export class PersonService {
     private URL_API = "http://localhost:8080"
 
     constructor(private http: HttpClient) { }

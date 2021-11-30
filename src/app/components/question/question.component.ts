@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Pergunta } from 'src/app/model/pergunta';
-import { PerguntaService } from 'src/app/pergunta.service';
+import { PerguntaService } from 'src/app/service/pergunta.service';
 
 @Component({
   selector: 'app-question',

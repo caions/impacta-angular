@@ -7,15 +7,16 @@ import { MatTableModule } from '@angular/material/table'
 import { MatButtonModule } from '@angular/material/button'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductService } from './product.service';
 import { LoggerService } from './logger.service';
 import { HttpClientModule } from '@angular/common/http';
 import { QuestionComponent } from './components/question/question.component';
+import { PersonComponent } from './components/person/person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,7 @@ import { QuestionComponent } from './components/question/question.component';
     FormsModule,
     MatIconModule,
   ],
-  providers: [ProductService, LoggerService],
+  providers: [ LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
