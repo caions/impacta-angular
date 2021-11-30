@@ -20,10 +20,10 @@ export class QuestionComponent {
   }
 
   ngOnInit(): void {
-    this.findAllPergunta();
+    this.findAll();
   }
 
-  findAllPergunta() {
+  findAll() {
     this.servicePergunta.findAll().subscribe( 
       (response) => {
         this.dataSource = new MatTableDataSource<Pergunta>(response);
@@ -38,7 +38,7 @@ export class QuestionComponent {
     this.servicePergunta.delete(id).subscribe(
       (response) => {
         //  alert('sucesso!')
-        this.findAllPergunta();
+        this.findAll();
         this.dataSource = new MatTableDataSource<Pergunta>(response);
       }, (reponse) => {
         //     alert("Erro!")
@@ -50,7 +50,7 @@ export class QuestionComponent {
     this.servicePergunta.update(pergunta).subscribe(
       (response) => {
         alert('sucesso!')
-        this.findAllPergunta();
+        this.findAll();
         this.dataSource = new MatTableDataSource<Pergunta>(response);
       }, (reponse) => {
         alert("Erro!")
@@ -66,7 +66,7 @@ export class QuestionComponent {
   atualizarNoBanco(id: number) {
     this.servicePergunta.update(this.pergunta).subscribe(
       (response) => {
-        this.findAllPergunta()
+        this.findAll()
         this.mostrarFormulario = false;
       }, () => {
         alert("erro")
@@ -76,7 +76,7 @@ export class QuestionComponent {
   criarNoBanco() {
     this.servicePergunta.create(this.pergunta).subscribe(
       (response) => {
-        this.findAllPergunta()
+        this.findAll()
         this.mostrarFormulario = false;
       }, () => {
         alert("erro")
