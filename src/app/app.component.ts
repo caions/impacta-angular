@@ -69,8 +69,8 @@ export class AppComponent {
     );
   }
 
-  update(id: number, pessoa: Pessoa) {
-    this.service.update(id, pessoa).subscribe(
+  update(pessoa: Pessoa) {
+    this.service.update(pessoa).subscribe(
       (response) => {
         alert('sucesso!')
         this.findAll();
@@ -87,7 +87,7 @@ export class AppComponent {
   }
 
   atualizarNoBanco(id: number) {
-    this.service.update(id, this.pessoa).subscribe(
+    this.service.update(this.pessoa).subscribe(
       (response) => {
         this.findAll()
         this.mostrarFormulario = false;

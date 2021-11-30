@@ -19,7 +19,7 @@ export class PessoaService {
     delete(id: number) {
         return this.http.delete<Pessoa[]>(this.URL_API + '/pessoa/' + id);
     }
-    update(id: number, pessoa: Pessoa) {
-        return this.http.put<Pessoa[]>(this.URL_API + '/pessoa/' + id, pessoa);
+    update(pessoa: Pessoa) {
+        return this.http.put<Pessoa[]>(this.URL_API + '/pessoa/' + pessoa.id, pessoa);
     }
 }
