@@ -10,10 +10,12 @@ import { AppComponent } from './app.component';
 import { ProductService } from './product.service';
 import { LoggerService } from './logger.service';
 import { HttpClientModule } from '@angular/common/http';
+import { QuestionComponent } from './components/question/question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatInputModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [ProductService, LoggerService],
   bootstrap: [AppComponent]
