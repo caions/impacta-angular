@@ -10,7 +10,7 @@ import { PerguntaService } from 'src/app/pergunta.service';
 })
 export class QuestionComponent {
 
-  displayedColumnsPergunta: string[] = ['id', 'pergunta', 'resposta1','resposta2','resposta3','respostaCorreta'];
+  displayedColumnsPergunta: string[] = ['id', 'pergunta', 'resposta1','resposta2','resposta3','respostaCorreta','acoes'];
   dataSourcePergunta: any;
   mostrarFormulario = false;
   pergunta: Pergunta = new Pergunta();

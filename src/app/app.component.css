@@ -42,21 +42,6 @@
     margin: 0 16px;
   }
 
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
-  }
-
-  .toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover {
-    opacity: 0.8;
-  }
-
   .content {
     display: flex;
     margin: 82px auto 32px;
@@ -65,6 +50,16 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .content2 {
+    display: flex;
+    margin: 0px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
 
   svg.material-icons {
     height: 24px;
@@ -278,12 +273,12 @@ a:link, a:visited {
  }
 
  p{
-   margin-bottom: 50px;
+   margin-bottom: 20px;
  }
 
  table {
   width: 100%;
-  margin: 50px
+  margin: 20px 50px
 }
 
 .formulario{
