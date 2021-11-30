@@ -11,7 +11,7 @@ import { PerguntaService } from 'src/app/service/pergunta.service';
 export class QuestionComponent {
 
   displayedColumnsPergunta: string[] = ['id', 'pergunta', 'resposta1','resposta2','resposta3','respostaCorreta','acoes'];
-  dataSourcePergunta: any;
+  dataSource: any;
   mostrarFormulario = false;
   pergunta: Pergunta = new Pergunta();
 
@@ -26,7 +26,7 @@ export class QuestionComponent {
   findAllPergunta() {
     this.servicePergunta.findAll().subscribe( 
       (response) => {
-        this.dataSourcePergunta = new MatTableDataSource<Pergunta>(response);
+        this.dataSource = new MatTableDataSource<Pergunta>(response);
       },
       (response) => {
         alert("Erro!");
@@ -39,7 +39,7 @@ export class QuestionComponent {
       (response) => {
         //  alert('sucesso!')
         this.findAllPergunta();
-        this.dataSourcePergunta = new MatTableDataSource<Pergunta>(response);
+        this.dataSource = new MatTableDataSource<Pergunta>(response);
       }, (reponse) => {
         //     alert("Erro!")
       }
@@ -51,7 +51,7 @@ export class QuestionComponent {
       (response) => {
         alert('sucesso!')
         this.findAllPergunta();
-        this.dataSourcePergunta = new MatTableDataSource<Pergunta>(response);
+        this.dataSource = new MatTableDataSource<Pergunta>(response);
       }, (reponse) => {
         alert("Erro!")
       }
