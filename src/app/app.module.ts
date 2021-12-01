@@ -11,12 +11,16 @@ import { LoggerService } from './logger.service';
 import { HttpClientModule } from '@angular/common/http';
 import { QuestionComponent } from './components/question/question.component';
 import { PersonComponent } from './components/person/person.component';
+import { SimuladoComponent } from './components/simulado/simulado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionComponent,
     PersonComponent,
+    SimuladoComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +32,9 @@ import { PersonComponent } from './components/person/person.component';
     MatInputModule,
     FormsModule,
     MatIconModule,
+    BrowserAnimationsModule
   ],
-  providers: [ LoggerService],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
