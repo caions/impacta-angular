@@ -16,6 +16,7 @@ export class SimuladoComponent implements OnInit {
   pergunta: Pergunta = new Pergunta;
   resposta: String = ""
   historico: Historico = new Historico;
+  increment: Number = 198;
 
 
   constructor(
@@ -27,31 +28,38 @@ export class SimuladoComponent implements OnInit {
     this.buscarPerguntas();
   }
 
-  buscarPerguntas() {
+  sorteiaPergunta(response: Pergunta[]) {
+    this.perguntas = response
+    let randomNumber = Math.floor(Math.random() * response.length)
+    this.pergunta = this.perguntas[randomNumber];
+    //remove a pergunta selecionada do array e adiciona a um novo array de perguntas
+    this.perguntas.splice(this.perguntas.indexOf(this.perguntas[randomNumber]), 1)
+  }
 
+  buscarPerguntas() {
     this.servicePergunta.findAll().subscribe(
       (response: Pergunta[]) => {
-        this.perguntas = response;
-        this.pergunta = this.perguntas[0];
-        console.info(this.perguntas)
+        //sorteia a pergunta ao renderizar o componente
+        this.sorteiaPergunta(response)
       },
       () => {
         alert("Erro!");
       }
     );
-
   }
+
 
   enviar() {
     this.historico = new Historico();
-    this.historico.pergunta = this.pergunta;
     this.historico.pessoa = new Pessoa()
-    this.historico.pessoa.id = 155;
+    this.historico.pessoa.id = 214;
+    this.historico.pergunta = this.pergunta;
     this.historico.resposta = this.resposta;
 
     this.historicoService.create(this.historico).subscribe(
       response => console.info(response)
     )
-
+    this.sorteiaPergunta(this.perguntas)
   }
+
 }
