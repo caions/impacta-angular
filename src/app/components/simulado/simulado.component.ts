@@ -55,9 +55,8 @@ export class SimuladoComponent implements OnInit {
     this.historico.pergunta = this.pergunta;
     this.historico.resposta = this.resposta;
 
-    this.historicoService.create(this.historico).subscribe(
-      response => console.info(response)
-    )
+    this.historicoService.create(this.historico).subscribe()
+
     this.sorteiaPergunta(this.perguntas)
   }
 
