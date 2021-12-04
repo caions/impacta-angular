@@ -29,7 +29,7 @@ export class QuestionComponent {
         this.dataSource = new MatTableDataSource<Pergunta>(response);
       },
       (response) => {
-        alert("Erro!");
+       // alert("Erro!");
       }
     );
   }

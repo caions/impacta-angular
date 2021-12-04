@@ -42,7 +42,7 @@ export class SimuladoComponent implements OnInit {
         this.sorteiaPergunta(response)
       },
       () => {
-        alert("Erro!");
+      //  alert("Erro!");
       }
     );
   }
