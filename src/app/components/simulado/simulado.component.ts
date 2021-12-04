@@ -16,7 +16,6 @@ export class SimuladoComponent implements OnInit {
   pergunta: Pergunta = new Pergunta;
   resposta: String = ""
   historico: Historico = new Historico;
-  increment: Number = 198;
 
 
   constructor(
