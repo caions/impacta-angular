@@ -18,6 +18,8 @@
  
  .formulario{
    margin: 20px 0px;
+   max-width: 630px;
+   text-align: right;
  }
  
  .formulario .mat-form-field + .mat-form-field{
