@@ -4,7 +4,7 @@ import { Pergunta } from 'src/app/model/pergunta';
 import { Pessoa } from 'src/app/model/pessoa';
 import { HistoricoService } from 'src/app/service/historico.service';
 import { PerguntaService } from 'src/app/service/pergunta.service';
-import { PersonService } from 'src/app/service/person.service';
+import { PersonService } from 'src/app/service/pessoa.service';
 
 @Component({
   selector: 'app-simulado',

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table'
 import { Pessoa } from '../../model/pessoa';
-import { PersonService } from '../../service/person.service';
+import { PersonService } from '../../service/pessoa.service';
 
 @Component({
-  selector: 'app-person',
-  templateUrl: './person.component.html',
-  styleUrls: ['./person.component.css']
+  selector: 'app-pessoa',
+  templateUrl: './pessoa.component.html',
+  styleUrls: ['./pessoa.component.css']
 })
 export class PersonComponent  {
 
