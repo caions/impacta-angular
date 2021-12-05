@@ -35,7 +35,7 @@
     text-align: right;
     text-decoration: none;
   }
-  a:hover, a:active, a:focus {
+  a:hover {
     color: #BD9696;
   }
 
