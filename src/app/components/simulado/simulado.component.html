@@ -1,7 +1,8 @@
 <div class="content">
     <p *ngIf="exibirResultado;then blocoThen else blocoElse"></p>
     <ng-template #blocoThen>
-        <h2>Você acertou {{respostasCorretas}} de {{quantidadeDePerguntas}} perguntas!!!</h2>
+
+        <h2>{{pessoa.nome}}, você acertou {{respostasCorretas}} de {{quantidadeDePerguntas}} perguntas!!!</h2>
         <a routerLink="/user/simulado">
             <button mat-raised-button color="primary" (click)="recarregarPagina()">Tentar Novamente</button>
         </a>
