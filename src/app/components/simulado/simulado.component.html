@@ -1,13 +1,23 @@
 <div class="content">
-    <h2>Simulado</h2>
-    <h3>{{pergunta.pergunta}}</h3>
-    <h4>1) {{pergunta.resposta1}}</h4>
-    <h4>2) {{pergunta.resposta2}}</h4>
-    <h4>3) {{pergunta.resposta3}}</h4>
-    <mat-form-field appearance="fill">
-        <mat-label>Resposta</mat-label>
-        <input matInput type="text" name="resposta" [(ngModel)]="resposta">
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="enviar()">Enviar</button>
+    <p *ngIf="exibirResultado;then blocoThen else blocoElse"></p>
+    <ng-template #blocoThen>
+        <h2>Resultado final: <br>Você acertou {{respostasCorretas}} de {{quantidadeDePerguntas}} perguntas!!!</h2>
+        <a routerLink="/historico">
+            <button mat-raised-button color="primary">Visualizar Historico</button>
+        </a>
+    </ng-template>
+    <ng-template #blocoElse>
+        <h2>Simulado</h2>
+        <h3>{{pergunta.pergunta}}</h3>
+        <h4>1) {{pergunta.resposta1}}</h4>
+        <h4>2) {{pergunta.resposta2}}</h4>
+        <h4>3) {{pergunta.resposta3}}</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>Resposta</mat-label>
+            <input matInput type="text" name="resposta" [(ngModel)]="resposta">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="enviar()">Enviar</button>
+
+    </ng-template>
 </div>
 <br>

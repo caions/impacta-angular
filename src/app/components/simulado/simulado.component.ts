@@ -15,9 +15,12 @@ export class SimuladoComponent implements OnInit {
 
   perguntas: Pergunta[] = [];
   pergunta: Pergunta = new Pergunta;
+  quantidadeDePerguntas: number = 0
   resposta: String = ""
+  respostasCorretas: number = 0
   historico: Historico = new Historico;
   pessoa: Pessoa = new Pessoa
+  exibirResultado: boolean = false;
 
 
   constructor(
@@ -46,6 +49,7 @@ export class SimuladoComponent implements OnInit {
     })
     this.servicePergunta.findAll().subscribe(
       (response: Pergunta[]) => {
+        this.quantidadeDePerguntas = response.length
         //sorteia a pergunta ao renderizar o componente
         this.sorteiaPergunta(response)
       },
@@ -63,13 +67,17 @@ export class SimuladoComponent implements OnInit {
     this.historico.pergunta = this.pergunta;
     this.historico.resposta = this.resposta;
 
+    // adiciona +1 no atributo para cada resposta correta
+    if (this.resposta === this.pergunta.respostaCorreta) {
+      this.respostasCorretas += 1
+    }
     this.historicoService.create(this.historico).subscribe()
 
+    // se não houver mais perguntas, exibe o resultado
     if (this.perguntas.length !== 0) {
-      console.log("enviou a pergunta")
       this.sorteiaPergunta(this.perguntas)
     } else {
-      console.log("caiu aki")
+      this.exibirResultado = true
     }
 
 

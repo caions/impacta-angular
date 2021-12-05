@@ -10,7 +10,7 @@ import { HistoricoService } from 'src/app/service/historico.service';
 })
 export class HistoricComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'pessoa','resposta','resposta-correta'];
+  displayedColumns: string[] = ['id', 'pessoa', 'resposta', 'resposta-correta'];
   dataSource: any;
   historico: Historico = new Historico();
 
@@ -24,10 +24,10 @@ export class HistoricComponent implements OnInit {
   findAll() {
     this.service.findAll().subscribe(
       (response) => {
-          // alert('sucesso!')
+        // alert('sucesso!')
         this.dataSource = new MatTableDataSource<Historico>(response);
       }, (reponse) => {
-           // alert("Erro!")
+        // alert("Erro!")
       }
     );
   }
