@@ -30,4 +30,17 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <div id="area-secreta">
+        <span *ngIf="rotasAdmin">
+            <a routerLink="/admin/pessoas">
+                <button mat-raised-button color="warn">Pessoas</button>
+            </a>
+            <a routerLink="/admin/perguntas">
+                <button mat-raised-button color="warn">Perguntas</button>
+            </a>
+        </span>
+    </div>
+</div>
+<div>
+    Exibir Area secreta: <input type="checkbox" [(ngModel)]="rotasAdmin">
 </div>

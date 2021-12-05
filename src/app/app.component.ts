@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   greeting = 'QUIZ APP';
-
   constructor() {
 
   }

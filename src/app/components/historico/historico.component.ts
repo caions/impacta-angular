@@ -13,6 +13,7 @@ export class HistoricComponent implements OnInit {
   displayedColumns: string[] = ['id', 'pessoa', 'resposta', 'resposta-correta'];
   dataSource: any;
   historico: Historico = new Historico();
+  rotasAdmin = false;
 
   constructor(private service: HistoricoService) { }
 

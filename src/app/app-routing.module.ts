@@ -7,10 +7,10 @@ import { SimuladoComponent } from './components/simulado/simulado.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'perguntas', component: QuestionComponent },
-  { path: 'pessoas', component: PersonComponent },
-  { path: 'simulado', component: SimuladoComponent },
-  { path: 'historico', component: HistoricComponent },
+  { path: 'admin/perguntas', component: QuestionComponent },
+  { path: 'admin/pessoas', component: PersonComponent },
+  { path: 'user/simulado', component: SimuladoComponent },
+  { path: 'user/historico', component: HistoricComponent },
 ];
 
 @NgModule({
