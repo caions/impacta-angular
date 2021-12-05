@@ -1,4 +1,17 @@
-<div class="content">
-    <h1>Pessoas</h1>
-    <h1>{{mensagem}}</h1>
+<div class="content" role="main">
+    <h2>{{titulo}}</h2>
+    <form action="" class="formulario">
+        <mat-form-field id="input-id" appearance="fill">
+            <mat-label>ID</mat-label>
+            <input matInput type="text" name="id" [(ngModel)]="pessoa.id" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" id="input-nome">
+            <mat-label>Digite seu nome</mat-label>
+            <input matInput type="text" name="nome" [(ngModel)]="pessoa.nome">
+        </mat-form-field>
+        <a routerLink="/user/simulado">
+            <button mat-raised-button color="primary" (click)="cadastrar(pessoa.id)">Iniciar</button>
+        </a>
+    </form>
 </div>

@@ -14,11 +14,13 @@ import { PersonComponent } from './components/pessoa/pessoa.component';
 import { SimuladoComponent } from './components/simulado/simulado.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HistoricComponent } from './components/historico/historico.component'
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     QuestionComponent,
     PersonComponent,
     SimuladoComponent,

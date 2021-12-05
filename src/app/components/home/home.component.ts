@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Pessoa } from '../../model/pessoa';
+import { PersonService } from '../../service/pessoa.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,15 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  mensagem: string = "Aqui vamos gerenciar a entidade pessoa"
+  titulo: string = "Bem vindo ao Quiz App!!"
+  pessoa: Pessoa = new Pessoa();
+
+  constructor(private service: PersonService) {
+
+  }
+
+  cadastrar(id: number) {
+    this.service.create(this.pessoa).subscribe()
+  }
 
 }

@@ -1,9 +1,32 @@
 .content {
-    display: flex;
-    margin: 50px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  display: flex;
+  margin: 50px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+a{
+  text-align: center;
+}
+
+#input-id{
+  display: none;
+  text-align: center;
+}
+
+#input-nome{
+    text-align: center;
+}
+
+p{
+  margin-bottom: 20px;
+}
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+

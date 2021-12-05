@@ -4,9 +4,11 @@ import { HistoricComponent } from './components/historico/historico.component';
 import { PersonComponent } from './components/pessoa/pessoa.component';
 import { QuestionComponent } from './components/pergunta/pergunta.component';
 import { SimuladoComponent } from './components/simulado/simulado.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'admin/perguntas', component: QuestionComponent },
   { path: 'admin/pessoas', component: PersonComponent },
   { path: 'user/simulado', component: SimuladoComponent },
