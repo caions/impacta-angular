@@ -42,6 +42,10 @@ export class SimuladoComponent implements OnInit {
     this.perguntas.splice(this.perguntas.indexOf(this.perguntas[randomNumber]), 1)
   }
 
+  recarregarPagina() {
+    location.reload();
+  }
+
   buscarPerguntas() {
     // Adiciona a ultima pessoa criada para o atributo pessoa
     this.pessoaService.findAll().subscribe((response) => {
@@ -58,7 +62,6 @@ export class SimuladoComponent implements OnInit {
       }
     );
   }
-
 
   enviar() {
     this.historico = new Historico();
@@ -79,9 +82,6 @@ export class SimuladoComponent implements OnInit {
     } else {
       this.exibirResultado = true
     }
-
-
-
   }
 
 }
