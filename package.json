@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "ng build --aot --prod"
+    "heroku-prebuild": "rm -rf node_modules && npm cache verify",
+    "postinstall": "ng build --aot -prod",
+    "build:prod": "ng build --aot -prod --verbose",
+    "deploy:prod": "git push origin master && git push heroku master"
   },
   "private": true,
   "dependencies": {
