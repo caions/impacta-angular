@@ -4,9 +4,9 @@ import { Historico } from 'src/app/model/historico';
 import { HistoricoService } from 'src/app/service/historico.service';
 
 @Component({
-  selector: 'app-historic',
-  templateUrl: './historic.component.html',
-  styleUrls: ['./historic.component.css']
+  selector: 'app-historico',
+  templateUrl: './historico.component.html',
+  styleUrls: ['./historico.component.css']
 })
 export class HistoricComponent implements OnInit {
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HistoricComponent } from './components/historic/historic.component';
+import { HistoricComponent } from './components/historico/historico.component';
 import { PersonComponent } from './components/pessoa/pessoa.component';
 import { QuestionComponent } from './components/question/question.component';
 import { SimuladoComponent } from './components/simulado/simulado.component';
