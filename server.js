@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.use(express.static('./dist/angular-app-heroku'));
+app.use(express.static('./dist/project'));
 
 app.get('/*',(req,res)=>res.sendFile('index.html',{root:'dist/project'}))
 
-app.listen(process.env.PORT || 8080);
+app.listen(8080,console.log("servidor rodando"));
