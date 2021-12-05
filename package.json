@@ -3,15 +3,20 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-prebuild": "rm -rf node_modules && npm cache verify",
     "postinstall": "ng build --aot -prod",
     "build:prod": "ng build --aot -prod --verbose",
-    "deploy:prod": "git push origin master && git push heroku master"
+    "deploy:prod": "git push origin master && git push heroku master",
+    "heroku-postbuild": "ng build --prod"
   },
+  "engines": {
+    "node": "12.19.0",
+    "npm": "6.14.8"
+ },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.0.0",
