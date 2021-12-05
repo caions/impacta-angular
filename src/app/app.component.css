@@ -62,7 +62,7 @@
     margin: 0 16px;
   }
 
-  #menuLink{
+  #menu-link{
     margin-right: 30px;
   }
 
@@ -103,6 +103,10 @@
     margin-right: 0;
   }
 
+  .card-small{
+    margin-top: 30px;
+  }
+  
   .card.card-small {
     height: 16px;
     width: 168px;
@@ -171,6 +175,20 @@
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
+
+    .content{
+      margin-top: 100px
+    }
+
+    .toolbar{
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+      justify-content: center;
+      height: 70px;
+      padding: 12px;
+    }
+
     .card-container > *:not(.circle-link) ,
     .terminal {
       width: 100%;
@@ -192,8 +210,14 @@
   }
 
   @media screen and (max-width: 575px) {
+    #menu-link{
+      margin-right: 0px;
+    }
     svg#rocket-smoke {
       display: none;
       visibility: hidden;
+    }
+    #brand-name{
+      display: none;
     }
   }
