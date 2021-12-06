@@ -6,7 +6,7 @@ import { Pergunta } from '../model/pergunta'
     providedIn: 'root'
 })
 export class PerguntaService {
-    private URL_API = "http://localhost:8080"
+    private URL_API = "https://java-quiz-api.herokuapp.com"
 
     constructor(private http: HttpClient) { }
 
