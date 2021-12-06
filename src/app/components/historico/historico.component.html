@@ -5,12 +5,7 @@
     </a>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-        <!-- id Collum -->
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>Pessoa Id</th>
-            <td mat-cell *matCellDef="let element">{{element.id}}</td>
-        </ng-container>
+        <!-- TODO adicionar um icone de check caso correto e um x caso reposta correta não seja igual a reposta -->
 
         <!-- nome Collum -->
         <ng-container matColumnDef="pessoa">
@@ -18,16 +13,24 @@
             <td mat-cell *matCellDef="let element">{{element.pessoa.nome}}</td>
         </ng-container>
 
-        <!-- resposta Collum -->
-        <ng-container matColumnDef="resposta">
-            <th mat-header-cell *matHeaderCellDef>Resposta</th>
-            <td mat-cell *matCellDef="let element">{{element.resposta}}</td>
+        <!-- pergunta Collum -->
+        <ng-container matColumnDef="pergunta">
+            <th mat-header-cell *matHeaderCellDef>Pergunta</th>
+            <td mat-cell *matCellDef="let element">{{element.pergunta.pergunta}}</td>
         </ng-container>
 
-        <!-- resposta-correta Collum -->
-        <ng-container matColumnDef="resposta-correta">
-            <th mat-header-cell *matHeaderCellDef>Resposta <br> Correta</th>
-            <td mat-cell *matCellDef="let element">{{element.pergunta.respostaCorreta}}</td>
+        <!-- <mat-icon>save</mat-icon> -->
+        <!-- resposta-math Collum -->
+        <ng-container matColumnDef="math-resposta">
+            <th mat-header-cell *matHeaderCellDef>Acertou</th>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.resposta;else blocoElse">
+                    <mat-icon style="color: seagreen;">thumb_up</mat-icon>
+                </span>
+                <ng-template #blocoElse>
+                    <mat-icon color="warn">thumb_down</mat-icon>
+                </ng-template>
+            </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -35,9 +38,9 @@
     </table>
     <div id="area-secreta">
         <span *ngIf="rotasAdmin">
-            <a routerLink="/admin/pessoas">
+            <!-- <a routerLink="/admin/pessoas">
                 <button mat-raised-button color="warn">Cadastrar Pessoas</button>
-            </a>
+            </a> -->
             <a routerLink="/admin/perguntas">
                 <button mat-raised-button color="warn">Cadastrar Perguntas</button>
             </a>
