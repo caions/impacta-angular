@@ -40,6 +40,11 @@ export class SimuladoComponent implements OnInit {
 
     //remove a pergunta selecionada do array e adiciona a um novo array de perguntas
     this.perguntas.splice(this.perguntas.indexOf(this.perguntas[randomNumber]), 1)
+
+    // adiciona a ultima pessoa criada para o objeto pessoa
+    this.pessoaService.findAll().subscribe((response) => {
+      this.pessoa = response[response.length - 1]
+    })
   }
 
   recarregarPagina() {
@@ -47,10 +52,6 @@ export class SimuladoComponent implements OnInit {
   }
 
   buscarPerguntas() {
-    // Adiciona a ultima pessoa criada para o atributo pessoa
-    this.pessoaService.findAll().subscribe((response) => {
-      this.pessoa = response[response.length - 1]
-    })
     this.servicePergunta.findAll().subscribe(
       (response: Pergunta[]) => {
         this.quantidadeDePerguntas = response.length

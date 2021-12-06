@@ -6,6 +6,7 @@ import { Historico } from '../model/historico';
   providedIn: 'root'
 })
 export class HistoricoService {
+  //private URL_API = "http://localhost:8080"
   private URL_API = "https://java-quiz-api.herokuapp.com"
 
   constructor(private http: HttpClient) { }
